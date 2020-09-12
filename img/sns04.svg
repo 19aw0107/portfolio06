@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="154" height="63.861" viewBox="0 0 154 63.861">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a4de;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+        font-family: Meiryo-Bold, Meiryo;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        font-size: 14px;
+      }
+
+      .cls-3 {
+        font-size: 40px;
+      }
+
+      .cls-4 {
+        filter: url(#長方形_234);
+      }
+    </style>
+    <filter id="長方形_234" x="0" y="0" width="154" height="52" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.361"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ_149" data-name="グループ 149" transform="translate(-30 -3539.139)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 30, 3539.14)">
+      <rect id="長方形_234-2" data-name="長方形 234" class="cls-1" width="148" height="46" rx="10" transform="translate(3 3)"/>
+    </g>
+    <text id="ブックマーク" class="cls-2" transform="translate(84.634 3572)"><tspan x="0" y="0">ブックマーク</tspan></text>
+    <text id="B_" data-name="B!" class="cls-3" transform="translate(39 3543)"><tspan x="0" y="42">B!</tspan></text>
+  </g>
+</svg>

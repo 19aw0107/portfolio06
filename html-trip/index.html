@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8"><!--文字エンコーディング-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--IE-->
+        <meta name="viewport" content="width=device-width,initial-scale=1"><!--viewport-->
+        <meta name="format-detection" content="telephone=no"><!--リンク化防止-->
+        <title>旅人メディアサイト「GOGYOZAN(ゴギョウザン)」</title>
+        <meta name="description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。">
+        <meta name="keyword" content="GOGYOZAN,ゴギョウザン,旅,旅人,メディア,記事,集客,お店,無料">
+        <!--別ページ移動:<meta http-equiv="refresh" content="5; url=newpage.html">-->
+
+        <!--Open Graph Protcol-->
+        <meta property="og:url" content="" /><!--page url-->
+        <meta property="og:type" content="website"><!--page type-->
+        <meta property="og:locale" content="ja_JP"><!--日本語対応-->
+        <!--トップ以外:<meta property="og:type" content="article">-->
+        <meta property="og:title" content="旅人メディアサイト「GOGYOZAN」"><!--page title-->
+        <meta property="og:description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。"><!--page description-->
+        <meta property="og:site_name" content="GOGYOZAN"><!--page name-->
+
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="../css/normal-template.css">
+        <link rel="stylesheet" type="text/css" href="../css/add.css">
+
+        <!--javascript-->
+        <script src="../js/vue.js"></script>
+        <script src="../js/slide.js"></script>
+
+        <!--flickity-->
+        <link rel="stylesheet" type="text/css" href="../css/vue-flickity-2.css">
+        <script src="../js/vue-flickity-2.umd.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="旅人メディアサイト「GOGYOZAN」" title="GOGYOZANのロゴ" class="logo">
+            </a>
+            <div id="hamburger-event">
+                <div v-on:click="menu_open" v-bind:class="{ active: open_menu }" class="hamburger-menu_button">
+                    <span class="menu-solid1"></span>
+                    <span class="menu-solid2"></span>
+                    <span class="menu-solid3"></span>
+                </div>
+                <transition name="hamburger-menu_fade" v-cloak><!--ハンバーガーメニュー-->
+                    <div v-if="open_menu" class="hamburger-menu_area">
+                        <nav class="hamburger-menu_nav_area">
+                            <ul>
+                                <li class="hamburger-menu_li">
+                                    <a href="../index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">トップページ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../html-beginner/index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">初めての方へ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../html-article/index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">記事一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../html-article-upload/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">記事を投稿</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">旅先一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../html-special/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">月刊GOGYOZAN</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../html-service/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">集客サービス</p class="hamburger-menu_p_mini"></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../html-qanda/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">Q&A</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../html-contact/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">お問い合わせ</p></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </transition>
+            </div>
+        </header>
+        <main id="trip_list">
+        <section class="eye-catching_aria article w375px h200px">
+            <div class="text_center">
+                <h2 class="font24px white text_center font-shadow padding_h60px_0">旅先一覧</h2>
+                <p class="font16px white text_center font-shadow padding_h10px bold">GOGYOZANに登録されている旅先の一覧です。</p>
+            </div>
+        </section>
+        <section class="w100vw bg_gray">
+            <div class="padding_h20px">
+                <div class="w312px margin_auto">
+                    <h2 class="font20px color_yellow">旅先検索</h2>
+                    <input type="search" v-model="keyword" placeholder="キーワードを1つ入力してください" id="search_box">
+                </div>
+            </div>
+        </section>
+            <section class="w100vw bg_gray">
+                <div class="padding_h30px w345px margin_auto">
+                    <div v-for="item in filteredTrip" v-bind:key="item.id">
+                        <a v-bind:href="item.kiji_link" class="kiji_link">
+                            <section class="kiji_block bg_white margin_h20px  box-shadow">
+                                <img v-bind:src="item.kiji_img" class="w345px h210px radius_2px2px"
+                                    v-bind:alt="item.kiji_img_alt">
+                                <div class="w307px margin_auto">
+                                    <h3 class="margin_h10px text_center border_solid">{{ item.kiji_title }}</h3>
+                                    <p class="h74px" v-cloak>
+                                        {{ item.kiji_text01 }}<br>
+                                        {{ item.kiji_text02 }}<br>
+                                        {{ item.kiji_text03 }}<br>
+                                    </p>
+                                </div>
+                            </section>
+                        </a>
+                    </div>
+                    <div class="more-btn" v-on:click="openModal" v-cloak>
+                        <p class="more-btn_p">もっと旅先をみる</p>
+                    </div>
+                    <div id="overlay" v-show="showContent" v-cloak >
+                        <div id="content" v-cloak>
+                            <p v-on:click="closeModal" class="overalay">×</p>
+                            <p v-cloak>これ以上旅先はありません。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="bg_white w100vw text_center padding_h30px">
+                <a href="https://www.sagojo.link/">
+                    <img src="../img/ad.png" class="ad_img" alt="SAGOJO" title="SAGOJOのバナー">
+                </a>
+            </aside>
+        </main>
+        <!--フッター-->
+        <footer>
+            <div class="footer_menu">
+                <a href="../index.html">
+                    <p>トップページ</p>
+                </a>
+                <a href="../html-article-upload/index.html">
+                    <p>記事を投稿する</p>
+                </a>
+                <a href="../html-beginner/index.html">
+                    <p>初めての方へ</p>
+                </a>
+                <a href="../html-qanda/index.html">
+                    <p>Q&A</p>
+                </a>
+                <a href="../html-article/index.html">
+                    <p>記事一覧</p>
+                </a>
+                <a href="../html-contact/index.html">
+                    <p>お問い合わせ</p>
+                </a>
+                <a href="index.html">
+                    <p>旅先一覧<br>(飲食店一覧)</p>
+                </a>
+                <a href="../html-service/index.html">
+                    <p>集客サービス<br>(飲食店向け)</p>
+                </a>
+                <a href="../html-special/index.html">
+                    <p>月刊GOGYOZAN</p>
+                </a>
+            </div>
+            <p class="copyright">©SAGOJO.inc</p>
+        </footer>
+        <div class="btn_box">
+            <a href="../html-beginner/index.html">
+                <div class="icon_btn_beginner font-shadow">
+                    <img src="../img/menu_bigi.png">
+                </div>
+            </a>
+            <a href="../html-article-upload/index.html">
+                <div class="icon_btn_article font-shadow">
+                    <img src="../img/menu_kaku.png">
+                </div>
+            </a>
+        </div>
+    </body>
+</html>

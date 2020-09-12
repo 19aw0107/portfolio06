@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8"><!--文字エンコーディング-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--IE-->
+        <meta name="viewport" content="width=device-width,initial-scale=1"><!--viewport-->
+        <meta name="format-detection" content="telephone=no"><!--リンク化防止-->
+        <title>旅人メディアサイト「GOGYOZAN(ゴギョウザン)」</title>
+        <meta name="description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。">
+        <meta name="keyword" content="GOGYOZAN,ゴギョウザン,旅,旅人,メディア,記事,集客,お店,無料">
+        <!--別ページ移動:<meta http-equiv="refresh" content="5; url=newpage.html">-->
+
+        <!--Open Graph Protcol-->
+        <meta property="og:url" content="" /><!--page url-->
+        <meta property="og:type" content="website"><!--page type-->
+        <meta property="og:locale" content="ja_JP"><!--日本語対応-->
+        <!--トップ以外:<meta property="og:type" content="article">-->
+        <meta property="og:title" content="旅人メディアサイト「GOGYOZAN」"><!--page title-->
+        <meta property="og:description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。"><!--page description-->
+        <meta property="og:site_name" content="GOGYOZAN"><!--page name-->
+
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="../css/normal-template.css">
+        <link rel="stylesheet" type="text/css" href="../css/add.css">
+
+        <!--javascript-->
+        <script src="../js/vue.js"></script>
+        <script src="../js/slide.js"></script>
+
+        <!--flickity-->
+        <link rel="stylesheet" type="text/css" href="../css/vue-flickity-2.css">
+        <script src="../js/vue-flickity-2.umd.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="旅人メディアサイト「GOGYOZAN」" title="GOGYOZANのロゴ" class="logo">
+            </a>
+            <div id="hamburger-event">
+                <div v-on:click="menu_open" v-bind:class="{ active: open_menu }" class="hamburger-menu_button">
+                    <span class="menu-solid1"></span>
+                    <span class="menu-solid2"></span>
+                    <span class="menu-solid3"></span>
+                </div>
+                <transition name="hamburger-menu_fade" v-cloak><!--ハンバーガーメニュー-->
+                    <div v-if="open_menu" class="hamburger-menu_area">
+                        <nav class="hamburger-menu_nav_area">
+                            <ul>
+                                <li class="hamburger-menu_li">
+                                    <a href="../index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">トップページ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../html-beginner/index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">初めての方へ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../html-article/index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">記事一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../html-article-upload/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">記事を投稿</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../html-trip/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">旅先一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">月刊GOGYOZAN</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../html-service/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">集客サービス</p class="hamburger-menu_p_mini"></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../html-qanda/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">Q&A</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../html-contact/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">お問い合わせ</p></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </transition>
+            </div>
+        </header>
+        <main>
+            <section class="eye-catching_aria special w375px h250px">
+            </section>
+            <section class="w100vw bg_gray">
+                <div class="padding_h20px">
+                    <div class="w345px margin_auto">
+                        <h2 class="font20px color_yellow">7月の人気記事情報</h2>
+                        <p class="font14px">
+                            日差しが益々強くなり、外へ出ることが億劫になるこの頃。<br>
+                            皆さんはいかがお過ごしでしょうか？<br>
+                            今回は7月に人気だった記事をピックアップしてご紹介します！
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <article class="margin_h20px w345px margin_auto bg_white">
+                <section>
+                    <h3 class="font18px padding_h10px">美味しそうなカツの写真！！</h3>
+                    <a href="../html-article/article/12345.html" class="kiji_link">
+                        <div class="article_block bg_white">
+                            <img src="../img/kiji_list/4.jpg" class="w345px h210px radius_2px2px" alt="カツの画像">
+                                <div class="w307px margin_auto">
+                                    <h3 class="margin_h10px text_center border_solid">サクッとしたカツが自慢のお店！</h3>
+                                    <p class="h74px">分厚いお肉に黄金色に輝くサクサクの頃も。食べ応えのあるサクッとしたカツはいかがですか？</p>
+                                    <p class="tag">カツ</p>
+                                    <p class="tag">福岡</p>
+                                    <p class="tag">サクサク</p>
+                                    <p class="tag">常連</p>
+                                    <div class="date_list">
+                                        <time datetime="年-月-日" class="kiji_time">2020/07/06</time>
+                                        <p class="kiji_view">1000view</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </a>
+                    <p class="font14px padding_0_h30px padding_h10px_0">
+                        参古太郎さんの記事です。<br>
+                        記事の内容もそうですが、カツの画像がより一層、そのカツを美味しそうに見せています。
+                    </p>
+                </section>
+                <section>
+                    <h3 class="font18px padding_h10px">ラーメンの味や風味を深く分析してます。</h3>
+                    <a href="../html-article/article/12345.html" class="kiji_link">
+                        <div class="article_block bg_white">
+                            <img src="../img/kiji_list/1.jpg" class="w345px h210px radius_2px2px" alt="ラーメンの画像">
+                            <div class="w307px margin_auto">
+                                <h3 class="margin_h10px text_center border_solid">食欲をそそる濃厚醤油ラーメン！</h3>
+                                <p class="h74px">新宿駅から徒歩10分ほどの位置に位置するラーメン屋。40年前から営業が始まり、昔からの常連客で…</p>
+                                <p class="tag">ラーメン</p>
+                                <p class="tag">新宿</p>
+                                <p class="tag">ラーメン屋</p>
+                                <p class="tag">常連</p>
+                                <div class="date_list">
+                                    <time datetime="年-月-日" class="kiji_time">2020/07/27</time>
+                                    <p class="kiji_view">200view</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="font14px padding_0_h30px padding_h10px_0">
+                        参古太郎さんの記事です。<br>
+                        濃厚醤油ラーメンの味や風味、濃厚さ…あらゆる視点から分析していて、良い記事だと思います。
+                    </p>
+                </section>
+                <section>
+                    <h3 class="font18px padding_h10px">お寿司の魅力が伝わる記事でした。</h3>
+                    <a href="../html-article/article/12345.html" class="kiji_link">
+                        <div class="article_block bg_white">
+                            <img src="../img/kiji_list/2.jpg" class="w345px h210px radius_2px2px" alt="お寿司の画像">
+                            <div class="w307px margin_auto">
+                                <h3 class="margin_h10px text_center border_solid">新鮮なお寿司を堪能できるお店！</h3>
+                                <p class="h74px">いつもは回転ずしだけど、本格的なお寿司を食べたい。そんな方におすすめしたいのがこのお店。</p>
+                                <p class="tag">お寿司</p>
+                                <p class="tag">川崎</p>
+                                <p class="tag">新鮮</p>
+                                <p class="tag">魚</p>
+                                <div class="date_list">
+                                    <time datetime="年-月-日" class="kiji_time">2020/07/21</time>
+                                    <p class="kiji_view">400view</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="font14px padding_h10px_0">
+                        参古太郎さんの記事です。<br>
+                        本格的なお寿司である為に中々手を出せない人にも、本格的なお寿司の価値がわかる良い内容でした。
+                    </p>
+                </section>
+            </article>
+            <section class="w100vw bg_white">
+                <section class="w345px margin_auto">
+                    <div class="padding_h10px_0">
+                        <div class="w345px margin_auto">
+                            <h3 class="font18px padding_h10px color_yellow">まとめ</h3>
+                            <p class="font14px">
+                                今回は3つの記事をご紹介しました。<br>
+                                どれも良い記事でしたね。<br>
+                                次回は8月の更新となります。<br>
+                                おたのしみに！！
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="w345px margin_auto" id="share">
+                    <div class="padding_h40px_0">
+                        <div class="w345px margin_auto">
+                            <h3 class="font18px bold text_center">＼ SNSでシェア ／</h3>
+                            <div class="sns_btn">
+                                <img src="../img/sns01.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                <img src="../img/sns02.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                <img src="../img/sns04.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                <img src="../img/sns03.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overlay" v-show="showContent" v-cloak>
+                        <div id="content" v-cloak>
+                            <p v-on:click="closeModal" class="overalay" v-cloak>×</p>
+                            <p v-cloak>
+                                展示用の為、今回はSNSでの共有は出来ません。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <aside class="bg_white w100vw text_center padding_h30px">
+                <a href="https://www.sagojo.link/">
+                    <img src="../img/ad.png" class="ad_img" alt="SAGOJO" title="SAGOJOのバナー">
+                </a>
+            </aside>
+        </main>
+        <!--フッター-->
+        <footer>
+            <div class="footer_menu">
+                <a href="../index.html">
+                    <p>トップページ</p>
+                </a>
+                <a href="../html-article-upload/index.html">
+                    <p>記事を投稿する</p>
+                </a>
+                <a href="../html-beginner/index.html">
+                    <p>初めての方へ</p>
+                </a>
+                <a href="../html-qanda/index.html">
+                    <p>Q&A</p>
+                </a>
+                <a href="../html-article/index.html">
+                    <p>記事一覧</p>
+                </a>
+                <a href="../html-contact/index.html">
+                    <p>お問い合わせ</p>
+                </a>
+                <a href="../html-trip/index.html">
+                    <p>旅先一覧<br>(飲食店一覧)</p>
+                </a>
+                <a href="../html-service/index.html">
+                    <p>集客サービス<br>(飲食店向け)</p>
+                </a>
+                <a href="index.html">
+                    <p>月刊GOGYOZAN</p>
+                </a>
+            </div>
+            <p class="copyright">©SAGOJO.inc</p>
+        </footer>
+        <!--ボトムメニュー
+        <div class="btm_menu_on" id="btm_menu">
+            <div class="btn_menu_area">
+                <a href="../html-beginner/index.html">
+                    <div class="hajimete">
+                        <p class="hajimete_p">初めての方へ</p>
+                    </div>
+                </a>
+                <a href="../html-article-upload/index.html">
+                    <div class="kijitoukou">
+                        <p class="kijitoukou_p">記事を投稿する</p>
+                    </div>
+                </a>
+            </div>
+        </div>-->
+        <div class="btn_box">
+            <a href="../html-beginner/index.html">
+                <div class="icon_btn_beginner font-shadow">
+                    <img src="../img/menu_bigi.png">
+                </div>
+            </a>
+            <a href="../html-article-upload/index.html">
+                <div class="icon_btn_article font-shadow">
+                    <img src="../img/menu_kaku.png">
+                </div>
+            </a>
+        </div>
+    </body>
+</html>

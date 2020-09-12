@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8"><!--文字エンコーディング-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--IE-->
+        <meta name="viewport" content="width=device-width,initial-scale=1"><!--viewport-->
+        <meta name="format-detection" content="telephone=no"><!--リンク化防止-->
+        <title>旅人メディアサイト「GOGYOZAN(ゴギョウザン)」</title>
+        <meta name="description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。">
+        <meta name="keyword" content="GOGYOZAN,ゴギョウザン,旅,旅人,メディア,記事,集客,お店,無料">
+        <!--別ページ移動:<meta http-equiv="refresh" content="5; url=newpage.html">-->
+
+        <!--Open Graph Protcol-->
+        <meta property="og:url" content="" /><!--page url-->
+        <meta property="og:type" content="website"><!--page type-->
+        <meta property="og:locale" content="ja_JP"><!--日本語対応-->
+        <!--トップ以外:<meta property="og:type" content="article">-->
+        <meta property="og:title" content="旅人メディアサイト「GOGYOZAN」"><!--page title-->
+        <meta property="og:description" content="GOGYOZAN(ゴギョウザン)は、旅人が書いた記事を掲載しているメディアサイトです。"><!--page description-->
+        <meta property="og:site_name" content="GOGYOZAN"><!--page name-->
+
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="../../css/normal-template.css">
+        <link rel="stylesheet" type="text/css" href="../../css/add.css">
+
+        <!--javascript-->
+        <script src="../../js/vue.js"></script>
+        <script src="../../js/slide.js"></script>
+
+        <!--flickity-->
+        <link rel="stylesheet" type="text/css" href="../../css/vue-flickity-2.css">
+        <script src="../../js/vue-flickity-2.umd.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="../../index.html">
+                <img src="../../img/logo.png" alt="旅人メディアサイト「GOGYOZAN」" title="GOGYOZANのロゴ" class="logo">
+            </a>
+            <div id="hamburger-event">
+                <div v-on:click="menu_open" v-bind:class="{ active: open_menu }" class="hamburger-menu_button">
+                    <span class="menu-solid1"></span>
+                    <span class="menu-solid2"></span>
+                    <span class="menu-solid3"></span>
+                </div>
+                <transition name="hamburger-menu_fade" v-cloak><!--ハンバーガーメニュー-->
+                    <div v-if="open_menu" class="hamburger-menu_area">
+                        <nav class="hamburger-menu_nav_area">
+                            <ul>
+                                <li class="hamburger-menu_li">
+                                    <a href="../../index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">トップページ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../../html-beginner/index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">初めての方へ</p></a>
+                                </li>
+                                <li class="hamburger-menu_li">
+                                    <a href="../index.html" class="hamburger-menu_a"><p class="hamburger-menu_p">記事一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../../html-article-upload/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">記事を投稿</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../../html-trip/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">旅先一覧</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../../html-special/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">月刊GOGYOZAN</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../../html-service/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">集客サービス</p class="hamburger-menu_p_mini"></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini left">
+                                    <a href="../../html-qanda/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">Q&A</p></a>
+                                </li>
+                                <li class="hamburger-menu_li_mini">
+                                    <a href="../../html-contact/index.html" class="hamburger-menu_a_mini"><p class="hamburger-menu_p_mini">お問い合わせ</p></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </transition>
+            </div>
+        </header>
+        <main>
+            <section class="w100vw bg_gray padding_0_h20px">
+                <section class="w345px margin_auto">
+                    <a href="../index.html">
+                        <p class="font18px padding_h10px bold">
+                            ＜ 記事一覧
+                        </p>
+                    </a>
+                </section>
+                <section class="w345px margin_auto bg_white margin_h10px_0">
+                    <div class="w325px margin_auto">
+                        <div class="padding_h10px">
+                            <img src="../../img/icon.png" class="icon">
+                            <p class="bg_white_area_name padding_w10px_0">参古 花子</p>
+                            <p class="bg_whitw_area_day">2020-06-10</p>
+                            <p class="bg_whitw_area_view padding_w10px_0">300view</p>
+                        </div>
+                        <h2 class="font20px bold text_center padding_h10px">餃子といえばこのお店しかない！</h2>
+                        <img src="../../img/kiji_list/6.jpg" class="w325px" alt="餃子の画像">
+                        <p class="font16px padding_h10px">
+                            餃子の街で知られている宇都宮で人気の餃子店。<br>
+                            外はパリッ、中はジューシー。<br>
+                            そんな餃子を味わえるのが、宇都宮駅から徒歩10分にある餃子店「鱈腹」です。
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">赤いのれんと餃子の匂いが目印</h2>
+                        <img src="../../img/kiji_list/6-2.png" class="w325px">
+                        <p class="font16px padding_h10px">
+                            宇都宮駅を降りて10分歩くと、香ばしく焼かれた餃子の匂いがしてきました。<br>
+                            赤いのれんには「餃子」の文字。<br>
+                            ここが今回紹介するお店です。
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">注文5分で餃子が運ばれてきます</h2>
+                        <img src="../../img/kiji_list/6-4.png" class="w325px">
+                        <p class="font16px padding_h10px">
+                            餃子はなんと、1皿12個で300円！！<br>
+                            なんてお財布に優しいのでしょうか。<br>
+                            早速餃子を注文。<br>
+                            <br>
+                            ……すると、5分くらいで餃子が運ばれてきました！！<br>
+                            餃子ってそんなに早く焼きあがるものでしたっけ？
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">見るだけで分かるおいしさ</h2>
+                        <img src="../../img/kiji_list/6-3.png" class="w325px">
+                        <p class="font16px padding_h10px">
+                            パリッと焼きあがった餃子は見るだけでそのおいしさが伝わってきます。
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">鱈腹自慢の特製ダレに付けて食べる</h2>
+                        <img src="../../img/kiji_list/6-1.png" class="w325px">
+                        <p class="font16px padding_h10px">
+                            餃子は鱈腹独自のレシピで調合された特製ソースでいただきます。<br>
+                            <br>
+                            評判通り、外はパリッとしていて、噛むとあっつあつの肉汁が中からあふれ出てきます。<br>
+                            とても美味しいです。
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">この餃子の秘密は…</h2>
+                        <img src="../../img/kiji_list/6-5.png" class="w325px">
+                        <p class="font16px padding_h10px">
+                            ここ「鱈腹」では、油を多めに敷き、短時間で餃子を強火で一気に焼き上げているのだそうです。<br>
+                            だから注文してすぐに運ばれてきたんですね。<br>
+                            <br>
+                            これが外はパリッ、中はジューシーな餃子の秘密です！
+                        </p>
+                        <h2 class="font20px bold text_center padding_h10px">＼ 今回紹介したお店はこちら！ ／</h2>
+                    <p class="bg_white_p">
+                        是非、八王子に訪れた時には、今回紹介した「鱈腹」さんに立ち寄ってみてください！
+                    </p>
+                    <div class="trip_box">
+                        <img src="../../img/kiji_list/6-8.png" class="trip_box_img">
+                        <h3 class="trip_box_title">餃子専門店「鱈腹（たらふく）」</h3>
+                        <p class="bg_white_p">
+                            八王子駅から徒歩10分にある餃子専門店。<br>
+                            住所：東京都八王子市<br>
+                            電話番号:xxx-xxxx-xxxx
+                        </p>
+                        <a href="../../html-trip/trip/6.html" class="trip_box_btn-flat-border">
+                            <p>詳しくはこちら</p>
+                        </a>
+                    </div>
+                    <section class="w345px margin_auto" id="share">
+                        <div class="padding_h40px_0">
+                            <div class="w345px margin_auto">
+                                <h3 class="font18px bold text_center">＼ SNSでシェア ／</h3>
+                                <div class="sns_btn">
+                                    <img src="../../img/sns01.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                    <img src="../../img/sns02.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                    <img src="../../img/sns04.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                    <img src="../../img/sns03.svg" class="sns_img" id="more-btn" v-on:click="openModal" v-cloak>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="overlay" v-show="showContent" v-cloak>
+                            <div id="content" v-cloak>
+                                <p v-on:click="closeModal" class="overalay" v-cloak>×</p>
+                                <p v-cloak>
+                                    展示用の為、今回はSNSでの共有は出来ません。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </section>
+            </section>
+            <aside class="bg_white w100vw text_center padding_h30px">
+                <a href="https://www.sagojo.link/">
+                    <img src="../../img/ad.png" class="ad_img" alt="SAGOJO" title="SAGOJOのバナー">
+                </a>
+            </aside>
+        </main>
+        <!--フッター-->
+        <footer>
+            <div class="footer_menu">
+                <a href="../../index.html">
+                    <p>トップページ</p>
+                </a>
+                <a href="../../html-article-upload/index.html">
+                    <p>記事を投稿する</p>
+                </a>
+                <a href="../../html-beginner/index.html">
+                    <p>初めての方へ</p>
+                </a>
+                <a href="../../html-qanda/index.html">
+                    <p>Q&A</p>
+                </a>
+                <a href="../index.html">
+                    <p>記事一覧</p>
+                </a>
+                <a href="../../html-contact/index.html">
+                    <p>お問い合わせ</p>
+                </a>
+                <a href="../../html-trip/index.html">
+                    <p>旅先一覧<br>(飲食店一覧)</p>
+                </a>
+                <a href="../../html-service/index.html">
+                    <p>集客サービス<br>(飲食店向け)</p>
+                </a>
+                <a href="../../special/index.html">
+                    <p>月刊GOGYOZAN</p>
+                </a>
+            </div>
+            <p class="copyright">©SAGOJO.inc</p>
+        </footer>
+        <div class="btn_box">
+            <a href="../../html-beginner/index.html">
+                <div class="icon_btn_beginner font-shadow">
+                    <img src="../../img/menu_bigi.png">
+                </div>
+            </a>
+            <a href="../../html-article-upload/index.html">
+                <div class="icon_btn_article font-shadow">
+                    <img src="../../img/menu_kaku.png">
+                </div>
+            </a>
+        </div>
+    </body>
+</html>
